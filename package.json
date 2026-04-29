@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "test": "node --test tests/client.test.mjs",
     "prepublishOnly": "npm run build"
   },
   "keywords": [

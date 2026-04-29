@@ -125,6 +125,13 @@ export class Whitebox {
     });
   }
 
+  /**
+   * List supported models.
+   */
+  async listModels(): Promise<{ models: Array<{ id: string; name: string; provider: string; tier: string }>; defaults: { standard: string[]; fast: string[] } }> {
+    return this.request('GET', '/models');
+  }
+
   private async request<T>(method: string, path: string, body?: any): Promise<T> {
     const url = `${this.baseUrl}${path}`;
 
