@@ -1,0 +1,30 @@
+{
+  "name": "@whiteboxhq/sdk",
+  "version": "0.1.0",
+  "description": "WhiteBox SDK - AI Decision Observability",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ai",
+    "classification",
+    "observability",
+    "consensus",
+    "llm"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ja-roque/whitebox"
+  },
+  "homepage": "https://whiteboxhq.ai",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
