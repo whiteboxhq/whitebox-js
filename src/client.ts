@@ -84,7 +84,8 @@ export class Whitebox {
     if (perPage != null) params.set('per_page', String(perPage));
     const query = params.toString();
     const path = query ? `/decisions?${query}` : '/decisions';
-    return this.request<Decision[]>('GET', path);
+    const data = await this.request<{ decisions: Decision[]; total: number; page: number }>('GET', path);
+    return (data as any).decisions ?? data;
   }
 
   /**
