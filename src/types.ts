@@ -51,6 +51,7 @@ export interface DecideOptions {
   threshold?: number;
   sync?: boolean;
   mode?: 'standard' | 'fast';
+  models?: string[];
 }
 
 export interface BulkDecideOptions {

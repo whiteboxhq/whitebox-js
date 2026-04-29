@@ -34,7 +34,7 @@ export class Whitebox {
    * Submit a single decision request.
    */
   async decide(options: DecideOptions): Promise<Decision> {
-    return this.request<Decision>('POST', '/decide', {
+    const body: Record<string, unknown> = {
       input: options.input,
       options: options.options,
       prompt: options.prompt,
@@ -42,7 +42,9 @@ export class Whitebox {
       threshold: options.threshold,
       sync: options.sync,
       mode: options.mode,
-    });
+    };
+    if (options.models) body.models = options.models;
+    return this.request<Decision>('POST', '/decide', body);
   }
 
   /**
